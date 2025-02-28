@@ -1,0 +1,158 @@
+{
+  "cars": [
+    {
+      "id": "1",
+      "brand": "Toyota",
+      "model": "Corolla",
+      "price": 5000000,
+      "year": 2019,
+      "mileage": 45000,
+      "fuel_type": "Benzin",
+      "transmission": "Manuális",
+      "engine_size": 1600,
+      "horsepower": 132,
+      "color": "Fehér",
+      "doors": 4,
+      "seats": 5,
+      "features": [
+        "Klíma",
+        "Tempomat",
+        "Bluetooth"
+      ],
+      "top_speed": 190,
+      "acceleration": 10.2,
+      "fuel_consumption": 6.5,
+      "description": "Megkímélt állapotú családi autó.",
+      "condition": "Használt",
+      "service_history": "Teljes szerviztörténet",
+      "vin": "JTDBR32E042123456",
+      "owner_email": "user@example.com",
+      "owner_phone": "+36123456789",
+      "image_url": "/images/corolla/corolla.jpg",
+      "images": [
+        "/images/corolla/corollafront.jpg",
+        "/images/corolla/corollaback.jpg",
+        "/images/corolla/corollainterior.jpg"
+      ]
+    },
+    {
+      "id": "2",
+      "brand": "Honda",
+      "model": "Civic",
+      "price": 4500000,
+      "year": 2019,
+      "mileage": 52000,
+      "fuel_type": "Benzin",
+      "transmission": "Automata",
+      "engine_size": 1500,
+      "horsepower": 174,
+      "color": "Kék",
+      "doors": 4,
+      "seats": 5,
+      "features": [
+        "LED fényszórók",
+        "Navigáció",
+        "Kamera",
+        "Ülésfűtés"
+      ],
+      "top_speed": 210,
+      "acceleration": 8.5,
+      "fuel_consumption": 6,
+      "description": "Dinamikus és modern városi autó, keveset használt.",
+      "condition": "Használt",
+      "service_history": "Rendszeresen szervizelve",
+      "vin": "SHHFK7H55KU123456",
+      "owner_email": "user2@example.com",
+      "owner_phone": "+36234567890",
+      "image_url": "/images/hondacivic/hondacivic.jpg",
+      "images": [
+        "/images/hondacivic/hondacivicfront.jpg",
+        "/images/hondacivic/hondacivicback.jpg",
+        "/images/hondacivic/hondainterior.jpg"
+      ]
+    },
+    {
+      "id": "3",
+      "brand": "Ford",
+      "model": "Focus",
+      "price": 4000000,
+      "year": 2018,
+      "mileage": 68000,
+      "fuel_type": "Dízel",
+      "transmission": "Manuális",
+      "engine_size": 2000,
+      "horsepower": 150,
+      "color": "Fekete",
+      "doors": 5,
+      "seats": 5,
+      "features": [
+        "Parkolóradar",
+        "Klíma",
+        "Start-Stop rendszer"
+      ],
+      "top_speed": 205,
+      "acceleration": 9,
+      "fuel_consumption": 4.8,
+      "description": "Megbízható és takarékos családi autó.",
+      "condition": "Használt",
+      "service_history": "Márkaszervizben vezetett",
+      "vin": "WF0NXXGCHJT123456",
+      "owner_email": "user3@example.com",
+      "owner_phone": "+36345678901",
+      "image_url": "/images/fordfocus/fordfocus.jpg",
+      "images": [
+        "/images/fordfocus/fordfocusfront.jpg",
+        "/images/fordfocus/fordfocusback.jpg",
+        "/images/fordfocus/fordfocusinterior.jpg"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "9ce5",
+      "name": "Forgó Ádám",
+      "email": "forgoadam0307@gmail.com",
+      "password": "asdasdasd1",
+      "phone": "0620111111"
+    }
+  ],
+  "carBrands": [
+    {
+      "brand": "Toyota",
+      "models": [
+        "Corolla",
+        "Camry",
+        "RAV4",
+        "Prius"
+      ]
+    },
+    {
+      "brand": "Honda",
+      "models": [
+        "Civic",
+        "Accord",
+        "CR-V",
+        "Fit"
+      ]
+    },
+    {
+      "brand": "Ford",
+      "models": [
+        "Focus",
+        "Fiesta",
+        "Mustang",
+        "Escape"
+      ]
+    }
+  ],
+  "fuelTypes": [
+    "Benzin",
+    "Dízel",
+    "Hibrid",
+    "Elektromos"
+  ],
+  "transmissions": [
+    "Manuális",
+    "Automata"
+  ]
+}
