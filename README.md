@@ -1,4 +1,4 @@
-<h1>Használtautó V2.</h1>
+<h1>Autó adás-vétel</h1>
 
 Az Eszterházy Károly Katolikus Egyetem, Szakmai gyakorlatához készült ez a repository.
 
