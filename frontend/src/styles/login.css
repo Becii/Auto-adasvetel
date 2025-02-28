@@ -1,0 +1,484 @@
+/* Modern Login oldal stílusai */
+
+/* Alap változók */
+:root {
+    --primary-color: #2dd36f;
+    --primary-hover: #28b85c;
+    --dark-bg: #121212;
+    --card-bg: #1e1e1e;
+    --input-bg: #2c2c2c;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --text-muted: #8a8a8a;
+    --error-color: #ff3d71;
+    --error-bg: rgba(255, 61, 113, 0.15);
+    --border-color: #333333;
+    --focus-shadow: 0 0 0 3px rgba(45, 211, 111, 0.25);
+    --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 0 8px 10px rgba(0, 0, 0, 0.1);
+    --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --border-radius: 12px;
+    --input-radius: 8px;
+  }
+  
+  /* Reset és alapbeállítások */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--dark-bg);
+    background-image: linear-gradient(135deg, rgba(45, 211, 111, 0.05) 0%, rgba(45, 211, 111, 0) 100%);
+    background-attachment: fixed;
+  }
+  
+  /* Login oldal elrendezés */
+  .login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Dekoratív háttérelemek */
+  .login-page::before {
+    content: "";
+    position: absolute;
+    width: 50vh;
+    height: 50vh;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(45, 211, 111, 0.1) 0%, rgba(45, 211, 111, 0) 70%);
+    top: -20vh;
+    right: -20vh;
+    z-index: 0;
+    animation: pulse 15s infinite alternate;
+  }
+  
+  .login-page::after {
+    content: "";
+    position: absolute;
+    width: 40vh;
+    height: 40vh;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(45, 211, 111, 0.08) 0%, rgba(45, 211, 111, 0) 70%);
+    bottom: -15vh;
+    left: -15vh;
+    z-index: 0;
+    animation: pulse 12s infinite alternate-reverse;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1.2);
+      opacity: 0.7;
+    }
+  }
+  
+  .container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Bejelentkező kártya */
+  .auth-card {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    max-width: 450px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  }
+  
+  .auth-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25), 0 10px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Kártya dekoratív elem */
+  .auth-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), #4cd79f);
+  }
+  
+  /* Fejléc */
+  .auth-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+  
+  .auth-header h1 {
+    color: var(--text-primary);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+  
+  .auth-header p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  /* Hibaüzenet */
+  .alert-danger {
+    background-color: var(--error-bg);
+    color: var(--error-color);
+    padding: 1rem 1.25rem;
+    border-radius: var(--input-radius);
+    margin-bottom: 1.75rem;
+    text-align: center;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    border-left: 3px solid var(--error-color);
+  }
+  
+  /* Űrlap */
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Űrlap csoportok */
+  .form-group {
+    margin-bottom: 1.75rem;
+    width: 100%;
+    position: relative;
+  }
+  
+  .form-group label {
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color var(--transition-normal);
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 0.9rem 1.25rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--input-radius);
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    font-size: 1rem;
+    outline: none;
+    transition: all var(--transition-normal);
+  }
+  
+  .form-control:hover:not(:disabled) {
+    border-color: rgba(45, 211, 111, 0.3);
+  }
+  
+  .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: var(--focus-shadow);
+  }
+  
+  .form-group:focus-within label {
+    color: var(--primary-color);
+  }
+  
+  .form-control:disabled {
+    background-color: rgba(85, 85, 85, 0.5);
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  
+  /* Érvénytelen mező stílusa */
+  .form-control.is-invalid {
+    border-color: var(--error-color);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ff3d71' viewBox='0 0 16 16'%3E%3Cpath d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0-1A6 6 0 1 0 8 2a6 6 0 0 0 0 12z'/%3E%3Cpath d='M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 18px 18px;
+    padding-right: 2.5rem;
+  }
+  
+  .form-control.is-invalid:focus {
+    box-shadow: 0 0 0 3px rgba(255, 61, 113, 0.25);
+  }
+  
+  .invalid-feedback {
+    color: var(--error-color);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    padding-left: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .invalid-feedback::before {
+    content: "!";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    background-color: var(--error-color);
+    color: white;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  /* Checkbox */
+  .form-check {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.75rem;
+    padding-left: 0.25rem;
+  }
+  
+  .form-check-input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    margin-right: 0.75rem;
+    cursor: pointer;
+    position: relative;
+    transition: all var(--transition-normal);
+  }
+  
+  .form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+  
+  .form-check-input:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  .form-check-input:focus {
+    box-shadow: var(--focus-shadow);
+  }
+  
+  .form-check-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  /* Gomb */
+  .btn {
+    display: inline-block;
+    padding: 0.9rem 1.5rem;
+    border: none;
+    border-radius: var(--input-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+  }
+  
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background: linear-gradient(to right, 
+                                rgba(255, 255, 255, 0) 0%, 
+                                rgba(255, 255, 255, 0.1) 50%, 
+                                rgba(255, 255, 255, 0) 100%);
+    transition: all 0.8s;
+  }
+  
+  .btn-primary:hover:not(:disabled) {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(45, 211, 111, 0.3);
+  }
+  
+  .btn-primary:hover::after {
+    left: 100%;
+  }
+  
+  .btn-primary:active:not(:disabled) {
+    transform: translateY(0);
+  }
+  
+  .btn-block {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .btn:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  
+  /* Lábléc */
+  .auth-footer {
+    text-align: center;
+    margin-top: 2rem;
+    width: 100%;
+    position: relative;
+    padding-top: 1.5rem;
+  }
+  
+  .auth-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 25%;
+    right: 25%;
+    height: 1px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  }
+  
+  .forgot-password-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    transition: all var(--transition-normal);
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .forgot-password-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--primary-color);
+    transition: width var(--transition-normal);
+  }
+  
+  .forgot-password-link:hover {
+    color: var(--primary-hover);
+  }
+  
+  .forgot-password-link:hover::after {
+    width: 100%;
+  }
+  
+  .register-prompt {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+  }
+  
+  .register-prompt a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all var(--transition-normal);
+    position: relative;
+  }
+  
+  .register-prompt a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--primary-color);
+    transition: width var(--transition-normal);
+  }
+  
+  .register-prompt a:hover {
+    color: var(--primary-hover);
+  }
+  
+  .register-prompt a:hover::after {
+    width: 100%;
+  }
+  
+  /* Reszponzív dizájn */
+  @media (max-width: 480px) {
+    .auth-card {
+      padding: 2rem 1.5rem;
+      margin: 0 1rem;
+      max-width: 100%;
+    }
+  
+    .auth-header h1 {
+      font-size: 1.75rem;
+    }
+  
+    .auth-header p {
+      font-size: 0.9rem;
+    }
+  
+    .form-control {
+      padding: 0.8rem 1rem;
+    }
+  
+    .btn {
+      padding: 0.75rem 1.25rem;
+    }
+  
+    .btn-block {
+      width: 90%;
+    }
+  
+    .alert-danger,
+    .auth-footer {
+      width: 100%;
+    }
+  }

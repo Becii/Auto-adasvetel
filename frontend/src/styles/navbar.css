@@ -1,0 +1,366 @@
+/* Navbar stílusok */
+.navbar {
+    /* Pozicionálás */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
+    /* Megjelenés */
+    background-color: #212121; /* Sötét kékes helyett sötét szürkés-fekete */
+    padding: calc(var(--spacing-unit) * 2) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transition-normal);
+}
+
+.navbar-container {
+    /* Pozicionálás és elrendezés */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    /* Méretezés */
+    max-width: 1200px;
+    width: 92%;
+    margin: 0 auto;
+    padding: 0 calc(var(--spacing-unit) * 4);
+    gap: calc(var(--spacing-unit) * 2);
+}
+
+.navbar-logo {
+    /* Megjelenés */
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f7f7f7;
+    transition: color var(--transition-fast);
+    margin-left: -1rem;
+}
+
+.navbar-logo:hover {
+    color: #2dd36f;
+    text-shadow: 0 0 10px rgba(45, 211, 111, 0.5);
+}
+
+/* Kereső */
+.navbar-search {
+    /* Elrendezés */
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-search form {
+    /* Elrendezés */
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navbar-search input {
+    /* Pozicionálás és méretezés */
+    width: 300px;
+    margin: 0;
+    
+    /* Megjelenés */
+    padding: 0.7rem 3rem 0.7rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #f7f7f7;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all var(--transition-normal);
+}
+
+.navbar-search input:hover:not(:focus) {
+    border-color: rgba(45, 211, 111, 0.3);
+}
+
+.navbar-search input:focus {
+    border-color: #2dd36f;
+    box-shadow: 0 0 0 3px rgba(45, 211, 111, 0.2);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.navbar-search button {
+    /* Pozicionálás és méretezés */
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.5rem 0.8rem;
+    
+    /* Megjelenés */
+    background: linear-gradient(90deg, #2dd36f, #28b15e);
+    color: white;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.navbar-search button:hover {
+    background: linear-gradient(90deg, #2dd36f, #3dc77a);
+    box-shadow: 0 5px 15px rgba(45, 211, 111, 0.3);
+}
+
+.navbar-search button:active {
+    transform: translateY(-50%) scale(0.98);
+}
+
+/* Mobil menü ikon */
+.mobile-menu-icon {
+    /* Pozicionálás és megjelenés */
+    display: none;
+    font-size: 1.5rem;
+    color: #f7f7f7;
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.mobile-menu-icon:hover {
+    color: #2dd36f;
+}
+
+/* Navigációs menü */
+.nav-menu {
+    /* Elrendezés */
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing-unit) * 2);
+    list-style: none;
+    margin-right: -1rem;
+}
+
+.nav-item {
+    /* Pozicionálás */
+    position: relative;
+}
+
+.nav-link {
+    /* Elrendezés */
+    display: block;
+    
+    /* Megjelenés */
+    color: #cccccc;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all var(--transition-fast);
+}
+
+.nav-link:hover {
+    color: #2dd36f;
+    background-color: rgba(45, 211, 111, 0.1);
+    transform: translateX(3px);
+}
+
+/* Dropdown menü */
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    /* Pozicionálás */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1001;
+    
+    /* Megjelenés */
+    display: none;
+    background-color: #212121; /* Sötét kékes helyett sötét szürkés-fekete */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    min-width: 160px;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    /* Elrendezés */
+    display: block;
+    width: 100%;
+    text-align: left;
+    
+    /* Megjelenés */
+    padding: 0.5rem 1rem;
+    color: #cccccc;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    color: #2dd36f;
+    background-color: rgba(45, 211, 111, 0.1);
+    transform: translateX(5px);
+}
+
+.dropdown-item::before {
+    /* Pozicionálás és megjelenés */
+    content: '›';
+    margin-right: 8px;
+    color: #2dd36f;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: inline-block;
+}
+
+/* Reszponzív beállítások */
+@media (max-width: 768px) {
+    /* Pozicionálási változások mobilon */
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+    }
+    
+    .dropdown-menu {
+        position: static;
+    }
+    
+    /* Elrendezési változások */
+    .navbar-container {
+        flex-wrap: wrap;
+        padding: 0 calc(var(--spacing-unit) * 2);
+    }
+
+    .navbar-logo {
+        margin-left: 0;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        padding: calc(var(--spacing-unit) * 2);
+        background-color: #212121; /* Sötét kékes helyett sötét szürkés-fekete */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-right: 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        padding: 0.75rem 1rem;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.05);
+        padding-left: calc(var(--spacing-unit) * 2);
+        border-radius: 6px;
+    }
+
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .nav-item.dropdown .dropdown-menu.active {
+        display: block;
+    }
+
+    .navbar-search {
+        /* Pozicionálás és elrendezés */
+        width: 100%;
+        margin: calc(var(--spacing-unit) * 2) 0;
+    }
+
+    .navbar-search form {
+        width: 100%;
+    }
+
+    .navbar-search input {
+        width: 100%;
+        padding: 0.7rem 1rem;
+    }
+
+    .navbar-search button {
+        position: static;
+        transform: none;
+        margin-left: calc(var(--spacing-unit));
+        padding: 0.7rem 1rem;
+        border-radius: 6px;
+        width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Méretezési változások kisebb képernyőkön */
+    .navbar-search input {
+        width: 100%;
+    }
+
+    .navbar-search button {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .navbar-logo {
+        font-size: 1.25rem;
+    }
+}
+
+/* Világos téma módosítások */
+body.light-mode .navbar {
+    background-color: #ffffff;
+    border-bottom-color: #e2e8f0;
+}
+
+body.light-mode .navbar-logo {
+    color: #2dd36f;
+}
+
+body.light-mode .nav-link {
+    color: #718096;
+}
+
+body.light-mode .nav-link:hover {
+    background-color: rgba(45, 211, 111, 0.05);
+}
+
+body.light-mode .navbar-search input {
+    background-color: #f8faff;
+    border-color: #e2e8f0;
+    color: #2d3748;
+}
+
+body.light-mode .navbar-search input:focus {
+    background-color: #ffffff;
+    border-color: #2dd36f;
+    box-shadow: 0 0 0 3px rgba(45, 211, 111, 0.2);
+}
+
+body.light-mode .dropdown-menu {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+}
+
+body.light-mode .dropdown-item {
+    color: #718096;
+}
+
+body.light-mode .dropdown-item:hover {
+    background-color: rgba(45, 211, 111, 0.05);
+}

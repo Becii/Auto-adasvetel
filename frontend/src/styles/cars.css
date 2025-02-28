@@ -1,0 +1,683 @@
+/* CarDetails oldal általános stílusai */
+.car-details-page {
+  background-color: #1a1a1a;
+  min-height: 100vh;
+  padding: 2rem 0;
+  color: #ffffff;
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Morzsamenü (breadcrumbs) */
+.breadcrumbs {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.breadcrumbs a {
+  color: #2dd36f; /* Kék helyett zöld */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+  color: #28b15e; /* Sötétebb zöld hoverhez */
+}
+
+.breadcrumbs span {
+  color: #aaaaaa;
+}
+
+.breadcrumbs > *:not(:last-child)::after {
+  content: " > ";
+  color: #aaaaaa;
+  margin: 0 0.5rem;
+}
+
+/* Főcím */
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+/* Autó részletek konténer */
+.car-details-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Fő tartalom */
+.car-main {
+  flex: 2;
+  min-width: 0;
+}
+
+/* Ár szekció */
+.car-price-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.car-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2dd36f; /* Kék helyett zöld */
+}
+
+/* Gombok */
+.car-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.action-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #2dd36f; /* Kék helyett zöld */
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: #28b15e; /* Sötétebb zöld hoverhez */
+}
+
+.action-button.favorite {
+  background-color: #ff4d4d; /* Piros marad */
+}
+
+.action-button.favorite:hover {
+  background-color: #cc3d3d; /* Piros árnyalat marad */
+}
+
+/* Fő specifikációk */
+.car-main-specs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  background-color: #2a2a2a;
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-label {
+  color: #aaaaaa;
+  font-size: 0.9rem;
+}
+
+.spec-value {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Leírás */
+.car-description {
+  background-color: #2a2a2a;
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
+
+.car-description h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.car-description p {
+  color: #aaaaaa;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Oldalsáv */
+.car-sidebar {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Eladó információ */
+.seller-info {
+  background-color: #2a2a2a;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.seller-info:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.seller-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #2dd36f, #28b15e); /* Kék helyett zöld gradiens */
+}
+
+.seller-info h3 {
+  font-size: 1.6rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.seller-info p {
+  margin: 0.75rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #aaaaaa;
+}
+
+.seller-info .seller-name {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.seller-info .seller-location {
+  color: #aaaaaa;
+  font-style: italic;
+}
+
+.seller-info .seller-rating {
+  color: #2dd36f; /* Kék helyett zöld */
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.seller-info .seller-phone {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.seller-info .seller-phone:hover {
+  color: #2dd36f; /* Kék helyett zöld */
+}
+
+/* Kapcsolat gomb */
+.seller-contact-button {
+  display: block;
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  margin-top: 1.5rem;
+  background-color: #2dd36f; /* Kék helyett zöld */
+  color: #ffffff;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seller-contact-button:hover {
+  background-color: #28b15e; /* Sötétebb zöld hoverhez */
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(45, 211, 111, 0.4); /* Zöld árnyék */
+}
+
+/* Betöltés és hibaüzenet */
+.loading,
+.error {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.2rem;
+  padding: 2rem;
+}
+
+.error {
+  color: #ff4d4d; /* Piros marad */
+}
+
+/* Reszponzív dizájn */
+@media (max-width: 768px) {
+  .car-details-container {
+      flex-direction: column;
+  }
+
+  .car-price-section {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .car-actions {
+      width: 100%;
+      justify-content: space-between;
+  }
+
+  .action-button {
+      flex: 1;
+      text-align: center;
+  }
+
+  .car-main-specs {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .car-sidebar {
+      min-width: 100%;
+  }
+
+  .seller-info {
+      padding: 1.5rem;
+  }
+
+  .seller-info h3 {
+      font-size: 1.4rem;
+  }
+
+  .seller-info p {
+      font-size: 0.95rem;
+  }
+
+  .seller-contact-button {
+      padding: 0.8rem 1.2rem;
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-container {
+      padding: 0 1rem;
+  }
+
+  h1 {
+      font-size: 1.5rem;
+  }
+
+  .car-price {
+      font-size: 1.5rem;
+  }
+
+  .car-main-specs {
+      grid-template-columns: 1fr;
+  }
+
+  .seller-info {
+      padding: 1rem;
+  }
+
+  .seller-info h3 {
+      font-size: 1.2rem;
+  }
+
+  .seller-info p {
+      font-size: 0.9rem;
+      margin: 0.5rem 0;
+  }
+
+  .seller-contact-button {
+      padding: 0.7rem 1rem;
+      font-size: 0.85rem;
+  }
+}
+
+/* CarCard stílusok */
+.car-card {
+  background-color: #2a2a2a; /* Sötét szürke, illik az info-section-höz */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.car-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.car-image {
+  width: 100%;
+  height: 200px; /* Fix magasság a képekhez */
+  overflow: hidden;
+  position: relative;
+}
+
+.car-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Kép kitölti a teret levágás nélkül */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.car-card:hover .car-image img {
+  transform: scale(1.05); /* Hover hatás: enyhe nagyítás */
+}
+
+.no-image {
+  width: 100%;
+  height: 100%;
+  background-color: #3a3a3a; /* Sötétebb szürke placeholder */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaaaaa;
+  font-size: 1rem;
+}
+
+.car-details {
+  padding: 1rem;
+}
+
+.car-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.car-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2dd36f; /* Zöld kiemelés */
+  margin-bottom: 0.75rem;
+}
+
+.car-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #aaaaaa;
+}
+
+.car-specs span {
+  background-color: #3a3a3a;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+}
+
+.car-actions {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.favorite-button,
+.comparison-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.favorite-button {
+  color: #ff4d4d; /* Piros szív */
+}
+
+.favorite-button.active {
+  background-color: #ff4d4d;
+  color: #ffffff;
+}
+
+.favorite-button:hover:not(.active) {
+  background-color: rgba(255, 77, 77, 0.7);
+}
+
+.comparison-button {
+  color: #2dd36f; /* Zöld összehasonlítás ikon */
+}
+
+.comparison-button.active {
+  background-color: #2dd36f;
+  color: #ffffff;
+}
+
+.comparison-button:hover:not(.active) {
+  background-color: rgba(45, 211, 111, 0.7);
+}
+
+/* Featured Section stílusok */
+.featured-section {
+  padding: calc(var(--spacing-unit) * 4) 0;
+  text-align: center;
+  background-color: #1a1a1a; /* Sötét háttér, illik a sliderhez */
+}
+
+.featured-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: calc(var(--spacing-unit) * 3);
+  letter-spacing: 0.5px;
+}
+
+.featured-cars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: calc(var(--spacing-unit) * 2);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 calc(var(--spacing-unit) * 2);
+}
+
+/* Reszponzív beállítások */
+@media (max-width: 768px) {
+  .featured-cars {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: calc(var(--spacing-unit) * 1.5);
+  }
+
+  .car-image {
+      height: 180px;
+  }
+
+  .car-title {
+      font-size: 1.1rem;
+  }
+
+  .car-price {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-cars {
+      grid-template-columns: 1fr;
+      gap: calc(var(--spacing-unit));
+  }
+
+  .car-image {
+      height: 150px;
+  }
+
+  .car-title {
+      font-size: 1rem;
+  }
+
+  .car-price {
+      font-size: 0.95rem;
+  }
+}
+
+.car-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2dd36f; /* Kék helyett zöld */
+}
+
+.favorite-button {
+  color: #ff4d4d; /* Piros marad */
+}
+
+.comparison-button {
+  color: #2dd36f; /* Kék helyett zöld */
+}
+
+.comparison-button.active {
+  background-color: #2dd36f; /* Kék helyett zöld */
+  color: #ffffff;
+}
+
+.comparison-button:hover:not(.active) {
+  background-color: rgba(45, 211, 111, 0.7); /* Zöld árnyalat */
+}
+
+/* Contact Form stílusok (részlet) */
+.contact-form::before {
+  background: linear-gradient(90deg, #2dd36f, #28b15e); /* Kék helyett zöld gradiens */
+}
+
+.alert-success {
+  background-color: rgba(45, 211, 111, 0.15); /* Zöld árnyalat */
+  color: #2dd36f; /* Kék helyett zöld */
+  border-left: 3px solid #2dd36f; /* Kék helyett zöld */
+}
+
+.contact-form .form-group input:focus,
+.contact-form .form-group textarea:focus {
+  border-color: #2dd36f; /* Kék helyett zöld */
+}
+
+.contact-form .form-group:focus-within label {
+  color: #2dd36f; /* Kék helyett zöld */
+}
+
+.contact-form .submit-button {
+  background-color: #2dd36f; /* Kék helyett zöld */
+}
+
+.contact-form .submit-button:hover {
+  background-color: #28b15e; /* Sötétebb zöld hoverhez */
+  box-shadow: 0 5px 15px rgba(45, 211, 111, 0.3); /* Zöld árnyék */
+}
+
+/* Galéria stílusok */
+.car-gallery {
+  margin-bottom: 2rem;
+}
+
+.main-image {
+  width: 100%;
+  height: 400px; /* Fő kép magassága */
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: #3a3a3a; /* Háttér, ha nincs kép */
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Kép kitölti a teret */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.main-image:hover img {
+  transform: scale(1.05); /* Hover hatás: enyhe nagyítás */
+}
+
+.main-image .no-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaaaaa;
+  font-size: 1.2rem;
+}
+
+.thumbnail-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.thumbnail {
+  width: 100px; /* Béthumbnail mérete */
+  height: 75px;
+  border-radius: 5px;
+  cursor: pointer;
+  object-fit: cover;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease, opacity 0.3s ease;
+}
+
+.thumbnail.active {
+  border-color: #2dd36f; /* Zöld keret az aktív képen */
+  opacity: 1;
+}
+
+.thumbnail:hover {
+  opacity: 0.8;
+}
+
+/* Reszponzív beállítások */
+@media (max-width: 768px) {
+  .main-image {
+      height: 300px;
+  }
+
+  .thumbnail {
+      width: 80px;
+      height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-image {
+      height: 200px;
+  }
+
+  .thumbnail {
+      width: 60px;
+      height: 45px;
+  }
+}

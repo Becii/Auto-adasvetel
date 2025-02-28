@@ -1,0 +1,170 @@
+/* Slider stílusok */
+.slider {
+    position: relative;
+    width: 100vw; /* Teljes szélesség a viewport szélességéig */
+    height: 500px; /* Magasság változatlan */
+    overflow: hidden;
+    margin-left: calc(-50vw + 50%); /* Középre igazítás a teljes szélességhez */
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slider-slide.active {
+    opacity: 1;
+}
+
+.slider-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+    padding: calc(var(--spacing-unit) * 3); /* Nagyobb padding a szélesebb hatásért */
+    background: rgba(33, 33, 33, 0.7); /* Navbar #212121 félátlátszó változata */
+    border-radius: 8px;
+    max-width: 90%; /* Szélesebb tartalom */
+}
+
+.slider-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: calc(var(--spacing-unit));
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slider-description {
+    font-size: 1.2rem;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.slider-cta {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: #2dd36f;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slider-cta:hover {
+    background-color: #28b15e;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(45, 211, 111, 0.4);
+}
+
+/* Navigációs pontok */
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active {
+    background-color: #2dd36f;
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background-color: #ffffff;
+}
+
+/* Reszponzív beállítások */
+@media (max-width: 768px) {
+    .slider {
+        height: 400px;
+    }
+
+    .slider-title {
+        font-size: 2rem;
+    }
+
+    .slider-description {
+        font-size: 1rem;
+    }
+
+    .slider-cta {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .slider-dots {
+        bottom: 15px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .slider-content {
+        padding: calc(var(--spacing-unit) * 2);
+        max-width: 95%; /* Szélesebb reszponzív nézetben */
+    }
+}
+
+@media (max-width: 480px) {
+    .slider {
+        height: 300px;
+    }
+
+    .slider-content {
+        padding: calc(var(--spacing-unit));
+        max-width: 95%;
+    }
+
+    .slider-title {
+        font-size: 1.5rem;
+    }
+
+    .slider-description {
+        font-size: 0.9rem;
+        margin-bottom: calc(var(--spacing-unit));
+    }
+
+    .slider-cta {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    .slider-dots {
+        bottom: 10px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+}
